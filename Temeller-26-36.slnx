@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/C#/">
     <Project Path="C#/Temeller-26-36/Temeller-26-36.csproj" />
+    <Project Path="C#/Temeller-36-71/Temeller-36-71.csproj" />
   </Folder>
 </Solution>

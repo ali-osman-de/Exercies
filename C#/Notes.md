@@ -16,5 +16,16 @@
 - Kendi Tekrar Etmeme, anlık çözüm oluşturma, ezberleme yok.
 - Anlamlı isimlendirme.
 
+### Değişken Nedir?
+- Yazılımda veriler RAM üzerinde tutulur ve oradan kullanılır
+- Bu esnada yazılımdaki değişkenler veriyi gidip ram'e yazıp daha sonra ihtiyaç duyduğu anda tekrar o değişken adıyla çağırması.
+- Veri türleri bildirilmelidir.
+- Primitive Türler (BYTE, INT, CHAR) -> Değer Türlü Değişkenler(DECIMAL)
+- Reference Türler -> Nesne Tutan Değişkenler
+- Type(Ram'de alan tahsisi) DeğişkenAdı = değeri;
+- Bu DeğişkenAdı adlı değişkene artık Type ne ise o türde veriler atanabilir.
 
+### C# Dili Özellikleri
+- Büyük küçük harf duyarlılığı ali!=Ali!=aLi
+- Tip Güvenli, int a = 5;   a!='5';
 
