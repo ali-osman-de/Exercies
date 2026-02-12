@@ -2,5 +2,7 @@
   <Folder Name="/C#/">
     <Project Path="C#/Temeller-26-36/Temeller-26-36.csproj" />
     <Project Path="C#/Temeller-36-71/Temeller-36-71.csproj" />
+    <Project Path="C#/Temeller-71-91/Temeller-71-91.csproj" />
+    <Project Path="C#/Temeller-91-125/Temeller-91-125.csproj" />
   </Folder>
 </Solution>
