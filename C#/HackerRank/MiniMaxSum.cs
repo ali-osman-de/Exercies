@@ -1,9 +1,22 @@
 public class MiniMaxSum
 {
+    // 1.Çözüm 3 case'den geçti
     public static void miniMaxSum(List<int> arr)
     {
         var minValue =  arr.Sum() - arr.Max();
         var maxValue =  arr.Sum() - arr.Min();
+        Console.WriteLine($"{minValue} {maxValue}");
+    }
+
+    // 2.Çözüm tüm caselerden geçti
+    public static void miniMaxSum(List<int> arr)
+    {
+        long total = 0;
+        for(int i = 0; i < arr.Count; i++){
+            total += arr[i];
+        }
+        long minValue = total - arr.Max();
+        long maxValue = total - arr.Min();
         Console.WriteLine($"{minValue} {maxValue}");
     }
 }
