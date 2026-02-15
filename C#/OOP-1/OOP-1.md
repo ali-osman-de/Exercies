@@ -17,3 +17,9 @@
 - Class'lar ayrıca tür özelliği de taşır.
 - Namespace içerisinde, dışında, Class içerisinde(Nested type) oluşturulabilirler.
 
+### Class Members
+- Field --> Nesne içerisinde depolanan değişkenler, herbiri farklı türden olabilir.
+- Property --> özünde bir metotdur, fiziksel olarak değer almayan ve get,set blok barındırmaktadır. Metottan farkı yoktur
+Get --> değer okuma, Set --> değer atama  *** Bu özelliğe ENCAPSULATION / KAPSÜLLEME / SARMALAMA diyoruz ***
+* ENCAPSULATION / KAPSÜLLEME / SARMALAMA bir nesnedeki fieldların dışarıya kontrollü olarak açılması ve dışardan değer alınması işlemine denir.
+- 
