@@ -94,4 +94,17 @@ class OOP_1_Class_Members
         }
     }
 
+    #region this keyword kullanımı
+        // static yapılarda this keywordüne erişim olmaz
+        // constructor içerisinde de kullanabiliyoruz.
+        class ThisClass
+        {
+            int a;
+            public void ThisClassFunc(int a){
+                this.a = a; // ikinci kullanım erişimde
+                this.ThisClassFunc();   
+            }
+        }
+    
+    #endregion
 }
