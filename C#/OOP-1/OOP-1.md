@@ -22,4 +22,11 @@
 - Property --> özünde bir metotdur, fiziksel olarak değer almayan ve get,set blok barındırmaktadır. Metottan farkı yoktur
 Get --> değer okuma, Set --> değer atama  *** Bu özelliğe ENCAPSULATION / KAPSÜLLEME / SARMALAMA diyoruz ***
 * ENCAPSULATION / KAPSÜLLEME / SARMALAMA bir nesnedeki fieldların dışarıya kontrollü olarak açılması ve dışardan değer alınması işlemine denir.
-- 
+
+### Nesne Nedir? Derinlemesine
+- Birden fazla birbirleriyle ilişki bir yapılanma, veri bütünü
+- Bir insan bütün olarak veridir yani nesnedir, ayrıca bunların tüm diğer özellikleri de fieldları desek yanlış olmaz ama yine de bir nesnedir.
+- Complex veriler birer Nesnedir diyebiliriz.
+- Lüzumsuz değerleri içermemelidir.
+- Classlar ise Complex Type olarak geçer yani türdür.
+- Nesneyi neden kullanırız diye soru gelirse, daha sistematik ve düzenli, hızlı bir şekilde yapabilmek adına
