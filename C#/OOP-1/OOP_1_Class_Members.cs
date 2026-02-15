@@ -8,6 +8,11 @@ class OOP_1_Class_Members
         fieldClass.Topla(); // metotlar ise bu şekilde
         fieldClass["Ali Osman Demirkollu"];
 
+        SummaryMyClass summaryClass = new SummaryMyClass();
+        summaryClass.Metin = "Metin Ali Feyza :D";
+        summaryClass.MetindeSağSolBoşlukSil("    aliosman       ");
+
+
         Console.WriteLine(fieldClass.Name); // Get bloğu tetiklenir.
         
     }
@@ -63,6 +68,29 @@ class OOP_1_Class_Members
             {
                 FullName = value;
             }
+        }
+    }
+
+    // Kendi metotlarımıza, classlarımıza açıklama ekleme özelliği kazandıralım
+    
+    /// <summary>
+    /// Bu Class Bir Özetleme sunar.
+    /// </summary>
+    class SummaryMyClass
+    {
+        /// <summary>
+        /// Özetlenecek Metin
+        /// </summary>
+        public string Metin { get; set; }
+
+        /// <summary>
+        /// metine ait Sağdan Soldan Boşlukları siler
+        /// </summary>
+        /// <param name="metin">Bu metin yukarıdaki göreve göre şekillenir</param>
+        /// <returns>Sağ Soldan boşluk siler</returns>
+        public string MetindeSağSolBoşlukSil(string metin)
+        {
+            return metin.Trim();
         }
     }
 
