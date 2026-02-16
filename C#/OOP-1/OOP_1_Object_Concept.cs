@@ -15,12 +15,22 @@ class OOP_1_Object_Concept
 
         // Garbage Collector mekanızması sayesinde referansız nesneler HEAP bölgesinde imha edilir. 
         new MyClass().Fun(); // --> referensı olmadığı için HEAP bölgesinde nesne oluşturulmuştur fakat erişimimiz yoktur.
+
+        MyClass myClass4 = new MyClass();
+        MyClass myClass5 = myClass4; // Shallow Copy
+        MyClass myClass6 = myClass4.Clone(); // Deep Copy
+
     }
 
     class MyClass
     {
         public void Fun(){
             Console.WriteLine("Fun");
+        }
+
+        public MyClass Clone()
+        {
+            return (MyClass)this.MemberwiseClone();
         }
     }
 }

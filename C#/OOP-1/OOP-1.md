@@ -37,3 +37,11 @@ Get --> değer okuma, Set --> değer atama  *** Bu özelliğe ENCAPSULATION / KA
 - interface, class, abstract class birer referanslardır. Record'ta bir referanstır.
 - Nesne sadece ve sadece Class'tan  Class == Nesne
 - Referanslar bir nesne refere etmek zorunda değil ve null olarak işaretlenebilir.
+
+
+### Shallow Copy vs Deep Copy
+- a = 5; b = a; bu deep copy'dir, çünkü artık elimizde iki tane 5 vardır.
+- Referanslar shallow copy'dir, bir referans diğer değişkene atanınınca aslında bir önceki referansı almış olur.
+- Referans türlü değerler default olarak shallow copy yaparlar, elde var 1 tane elde olacak 1 tane
+- Değer türlü değişkenler ise default'ta deep copy yaparlar.
+- MemberwiseClone() --> ile ilgili nesne referansını deep olarak kopyalamamızı sağlar.
