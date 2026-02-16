@@ -10,6 +10,9 @@ class OOP_1_Inheritence
     // Kalıtımı hangi yapılar kalıtım alabilirler --> Class yapısına ait bir özellik, bir sınıf sadece bir sınıftan kalıtım alabilir.
     // Recordlar kendi aralarında kalıtım alabilirler, tek istisna Object.
     // Kalıtım : operatörü ile alınır. Her iki : kalıtım değildir.
+    // Kalıtım veren Base Class(kalıtım veren) --> Derived Class(kalıtım alan) olarak adlandırılır terminolojide
+    // Bir class hem base class hem de derived class olabilir
+    // Üretim Sırası --> Eğer bir nesne üretilecekse kalıtımlıysa ilk önce base daha sonra istenen class üretilecektir.
     static void Main()
     {
         // Opel nesnesinden erişilenler
@@ -26,6 +29,14 @@ class OOP_1_Inheritence
 
     class Araba
     {
+        public Araba()
+        {
+            
+        }
+        public Araba(int a)
+        {
+            
+        }
         public string Brand { get; set; }
         public int Model { get; set; }
     }
@@ -33,6 +44,14 @@ class OOP_1_Inheritence
     // Örnek kalıtım 
     class Opel : Araba
     {
+        public Opel() // Eğer boş bir constructor varsa varsayılan olarak Arabadaki boş parametreli constructor gelecek
+        {
+            
+        }
+        public Opel(int a) : base(a)
+        {
+            
+        }
         public bool KeylessGo { get; set; }
     }
 }
