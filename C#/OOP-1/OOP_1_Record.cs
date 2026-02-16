@@ -7,6 +7,12 @@ class OOP_1_Record
            MyProp = "2"  
         };
         
+        MyRecord myRecord = new MyRecord()
+        {
+            MyProperty2 = "2312"
+        };
+        MyRecord myRecord1 = myRecord with { MyProperty2 = "a12321"};
+        
     }
 
     class MyClass
@@ -36,12 +42,12 @@ class OOP_1_Record
 
     record MyRecord
     {
-        public int MyProperty { get; set; }
+        // public int MyProperty { get; set; }
         public string MyProperty2 { get; init; } // amaca uygun bu şekilde kullanım
 
-        public int Metot()
-        {
-            return 1;
-        }
+        // public int Metot()
+        // {
+        //     return 1;
+        // }
     } 
 }
