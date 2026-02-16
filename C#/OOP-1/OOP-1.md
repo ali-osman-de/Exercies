@@ -30,3 +30,10 @@ Get --> değer okuma, Set --> değer atama  *** Bu özelliğe ENCAPSULATION / KA
 - Lüzumsuz değerleri içermemelidir.
 - Classlar ise Complex Type olarak geçer yani türdür.
 - Nesneyi neden kullanırız diye soru gelirse, daha sistematik ve düzenli, hızlı bir şekilde yapabilmek adına
+
+### Referans Nedir?
+- Ram'in stack bölgesinde tanımlanan ve Heap bölgesindeki nesneleri işaretleyen değişkenlerdir.
+- a değişkeni stackte a'nin referesi yani referansı heapte tutulur.
+- interface, class, abstract class birer referanslardır. Record'ta bir referanstır.
+- Nesne sadece ve sadece Class'tan  Class == Nesne
+- Referanslar bir nesne refere etmek zorunda değil ve null olarak işaretlenebilir.
