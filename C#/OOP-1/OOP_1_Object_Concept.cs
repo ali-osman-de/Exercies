@@ -20,6 +20,14 @@ class OOP_1_Object_Concept
         MyClass myClass5 = myClass4; // Shallow Copy
         MyClass myClass6 = myClass4.Clone(); // Deep Copy
 
+        EncupsulationClassOlder encupsulationClass = new EncupsulationClassOlder();
+        encupsulationClass.TcGet();
+        encupsulationClass.TcSet(123456789);
+        
+        EncupsulationClassNewest encupsulationClassNewest = new EncupsulationClassNewest();
+        int VKN = encupsulationClassNewest.VergiKimlik;
+        encupsulationClassNewest.VergiKimlik = 123456789;
+
     }
 
     class MyClass
@@ -33,4 +41,35 @@ class OOP_1_Object_Concept
             return (MyClass)this.MemberwiseClone();
         }
     }
+
+    // Eskiden kullanılan Getter Setter metotları
+    class EncupsulationClassOlder
+    {
+        int Tc;
+
+        public int TcGet()
+        {
+            return this.Tc;
+        }
+        public void TcSet(int value)
+        {
+            this.Tc = value;
+        }
+    }
+
+    class EncupsulationClassNewest
+    {
+        public int VergiKimlik {
+            
+                get
+                {
+                    return this.VergiKimlik;
+                } set
+                {
+                    this.VergiKimlik = value;
+                } 
+
+            }
+    }
+
 }

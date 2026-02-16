@@ -45,3 +45,8 @@ Get --> değer okuma, Set --> değer atama  *** Bu özelliğe ENCAPSULATION / KA
 - Referans türlü değerler default olarak shallow copy yaparlar, elde var 1 tane elde olacak 1 tane
 - Değer türlü değişkenler ise default'ta deep copy yaparlar.
 - MemberwiseClone() --> ile ilgili nesne referansını deep olarak kopyalamamızı sağlar.
+
+### Encapsulation/ Kapsülleme/ Sarmalama
+- Nesne içerisindeki fieldları kontrollü olarak dışarı açılmasıdır veya içeri alınması.
+- Başka kişilerin yanlış kullanımlarını önlemek.
+- Bir kapı görevi görür demek yanlış olmaz, şartları biz belirliyoruz.
