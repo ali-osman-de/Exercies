@@ -50,3 +50,11 @@ Get --> değer okuma, Set --> değer atama  *** Bu özelliğe ENCAPSULATION / KA
 - Nesne içerisindeki fieldları kontrollü olarak dışarı açılmasıdır veya içeri alınması.
 - Başka kişilerin yanlış kullanımlarını önlemek.
 - Bir kapı görevi görür demek yanlış olmaz, şartları biz belirliyoruz.
+
+### Record Sınıfı Nedir?
+- C#9 ile birlikte gelen Init-Only properyies özelliği.
+- Bu özellik hem o fieldları read-only yapıyor hemde ilk tanımlama aşaması için set; bloğu yoksa ortadan kaldırıyor.
+- Nesnenin ilk yaratılış anında propertylerine değer atanmakta ve böylece iş kuralları gereği run-time'da değiştirilmemesi.
+- Nesne önplanda ise class nesnenin değerleri ön planda ise record
+- lightweight class olarakta düşünülebilir.
+- Record dataları sabitleyerek onları önplana atar.
