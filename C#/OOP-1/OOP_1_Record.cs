@@ -13,6 +13,10 @@ class OOP_1_Record
         };
         MyRecord myRecord1 = myRecord with { MyProperty2 = "a12321"};
         
+        // Positional Record
+        PositionalRecord positionalRecord = new PositionalRecord("ali", "osman");
+        var (n, m) = positionalRecord;
+
     }
 
     class MyClass
@@ -50,4 +54,11 @@ class OOP_1_Record
         //     return 1;
         // }
     } 
+
+    // Positional Record
+    record PositionalRecord(string name, string lastname) // hem constructor hem de decontructor
+    {
+        // bu yukardaki propertyler compiler-time sırasında init olarak oluşturulacaktır.
+    }
+
 }
