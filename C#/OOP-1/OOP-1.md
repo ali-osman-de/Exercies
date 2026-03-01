@@ -71,3 +71,10 @@ Get --> değer okuma, Set --> değer atama  *** Bu özelliğe ENCAPSULATION / KA
 - sealed ile işaretlenen bir class başka bir alt class'a kalıtım aktarımı sağlayamaz. 
 - ayrıca bir class içerisindeki virtual ile işaretli bir metodun kalıtım yoluyla bir alt classta override edilmesi mümkünken eğer biz bunu sealed ile işaretlersek yine override edilme işlemini de egale etmiş oluruz, yani a classındaki a-1 virtual metodu, a classından kalıtım alan b classı içerisinde override a-1 edilebilirken, eğer biz b classındaki a-1 override edileni sealed ile işaretlersek, b classından kalıtım alan c classında biz a-1 metodunu override edemeyiz.
 - Biraz karışık oldu fakat doğru oldu :D
+
+### Partial
+- Partial ile işaretli sınıflar, aynı isimde birden fazla sınıf olabilir.
+- Aynı proje, aynı namespace içerisinde olmalılar, aynı yapıda, aynı isimde olmalı.
+- partial sınıflar, partial metotlar barındırabilirler.
+- partial metotlar daima void tipinde dönüş değerleri vardır.
+- partial metotlar virtual olamazlar.
