@@ -58,3 +58,16 @@ Get --> değer okuma, Set --> değer atama  *** Bu özelliğe ENCAPSULATION / KA
 - Nesne önplanda ise class nesnenin değerleri ön planda ise record
 - lightweight class olarakta düşünülebilir.
 - Record dataları sabitleyerek onları önplana atar.
+
+### this / base ve readonly class yapıları
+- this kelimesi bir sınıf içerisindeki propteryleri constructor içerisinde ve erişimi sağlamamızı
+- this kelimesi ayrıca hangi constructor yapısının hangi sıra ile çalışmasını sıralayabildiğimiz bir yapı olarakta kullanılabilmektedir.
+- base kelimesi classlar arasında bir üste sınıftaki field veya propertyi erişim sağlanmasını
+- base kelimesi ayrıca yine bir üst sınıftaki hangi constructorın çalışmasını istiyorsak onu belirtebileceğimiz bir yapıdır.
+- readonly ise başlangıçta veya contstructor içerisinde bir değer atama işlemi yapabileceğimiz değişkenler için kullanılan bir yapıdır.
+- const vs readonly aralarındaki en büyük fark const işleminde değişken tanımlanma sırasında değer atanması zorunludur fakat readonly yapısında ise ya değişken tanımlanmada ya da constructor içerisinde değer atanmalıdır.
+
+### sealed keyword yapısı
+- sealed ile işaretlenen bir class başka bir alt class'a kalıtım aktarımı sağlayamaz. 
+- ayrıca bir class içerisindeki virtual ile işaretli bir metodun kalıtım yoluyla bir alt classta override edilmesi mümkünken eğer biz bunu sealed ile işaretlersek yine override edilme işlemini de egale etmiş oluruz, yani a classındaki a-1 virtual metodu, a classından kalıtım alan b classı içerisinde override a-1 edilebilirken, eğer biz b classındaki a-1 override edileni sealed ile işaretlersek, b classından kalıtım alan c classında biz a-1 metodunu override edemeyiz.
+- Biraz karışık oldu fakat doğru oldu :D
