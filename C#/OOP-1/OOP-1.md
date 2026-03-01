@@ -78,3 +78,12 @@ Get --> değer okuma, Set --> değer atama  *** Bu özelliğe ENCAPSULATION / KA
 - partial sınıflar, partial metotlar barındırabilirler.
 - partial metotlar daima void tipinde dönüş değerleri vardır.
 - partial metotlar virtual olamazlar.
+
+### Abstraction Davranışı
+- OOP kavramlarının bir bileşeni olmaya uygundur.
+- genel olarak altında yatan felsefe bana gerekli memberları getir hepsini değil mantığı.
+- Abstract class ve interfaceler ile daha iyi uygulanabilir fakat illa da olmak zorunda değil.
+
+### Abstract Class Yapısı
+- Eğer bir class bir diğer classtan miras alıyorsa adı inheritence diyoruz
+- Eğer bir class bir abstact classtan miras alıyorsa buna biz implementasyon diyoruz.
