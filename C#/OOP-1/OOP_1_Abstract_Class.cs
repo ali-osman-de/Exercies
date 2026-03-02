@@ -20,7 +20,7 @@ class OOP_1_Abstract_Class
         }
         // Normal yapıları barındırabilir.
         string name = "ali";
-        public int MyProperty { get; set; }
+        abstract public int MyProperty { get; set; }
         public int ReturnNumber()
         {
             return 0;
@@ -33,6 +33,8 @@ class OOP_1_Abstract_Class
 
     class MyClass2 : MyAbstractClass
     {
+        public override int MyProperty { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         // burada implementasyondan alınanlar abstract classtan geldiği için override edilmek zorunda
         public override void Sum(int a, int b)
         {
