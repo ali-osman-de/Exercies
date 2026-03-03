@@ -2,7 +2,7 @@
 {
     static void Main(string[] args)
     {
-        
+
     }
 
     #region Ref Return & Ref Local
@@ -108,5 +108,45 @@
         }
 
     #endregion
+
+    #region Exception Handler (İstisnai Durum)
+        /*
+            int a= 1, b=1;
+            try
+            {
+                if (a == b)
+                {
+                    throw new CustomException("a ve b eşit olamaz")
+                    {
+                        MyProperty = 10
+                    };
+                }
+            }
+            catch (CustomException ex)
+            {
+                Console.WriteLine($"{ex.Message} - MyProperty: {ex.MyProperty}");
+            }
+        
+        */
+        
+        // İstenmeyen davranışları kontrol altına almak ve programın çökmesini engellemek için kullanılır.
+
+        class CustomException : Exception
+        {
+            public CustomException() : base("Custom hata")
+            {
+                
+            }
+
+            public CustomException(string message) : base(message)
+            {
+                
+            }
+            public int MyProperty { get; set; }
+        }
+
+    #endregion
+
+
 
 }
