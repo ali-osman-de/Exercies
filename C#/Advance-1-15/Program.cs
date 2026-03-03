@@ -2,7 +2,7 @@
 {
     static void Main(string[] args)
     {
-
+        
     }
 
     #region Ref Return & Ref Local
@@ -69,6 +69,44 @@
 
     #endregion
 
+    #region Implicit / Explicit Operators Overloading
+        /*
+            A a = new A() { MyProperty = 10 };
+            B b = a; // Implicit conversion sayesinde A nesnesi B nesnesine dönüştürülmüş olur.
+            B b1 = (A) new A();
 
+            B b2 = new B() { MyProperty = 20 };
+            A a2 = (A)b2; // Explicit conversion sayesinde B nesnesi A nesnesine dönüştürülmüş olur.
+        */
+
+        // Implicit operatörler (Implicit conversion) Kapalı dönüşüm --> kendi türünden olmayan türlere dönüşüm yaparken tür dönüştürme işlemlerinini açıklamak için kullanılan kavramlardır.
+        // int a = 5;
+        // double b = a; // implicit conversion
+
+        class A
+        {
+            public int MyProperty { get; set; }
+            
+            public static implicit operator B(A a)
+            {
+                return new B() { MyProperty = a.MyProperty }; // Burada A nesnesi B nesnesine dönüştürülmüş olur.
+            }
+        }
+
+        // Explicit operatörler (Explicit conversion) Açık dönüşüm --> kendi türünden olmayan türlere dönüşüm yaparken tür dönüştürme işlemlerini açıklamak için kullanılan kavramlardır.
+        // double c = 5.5;
+        // int d = (int)c; // explicit conversion
+
+        class B
+        {
+            public int MyProperty { get; set; }
+
+            public static explicit operator A(B b)
+            {
+                return new A() { MyProperty = b.MyProperty }; // Burada B nesnesi A nesnesine dönüştürülmüş olur.
+            }
+        }
+
+    #endregion
 
 }
