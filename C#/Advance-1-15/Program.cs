@@ -2,7 +2,7 @@
 {
     static void Main(string[] args)
     {
-
+        GenericClass<bool, string, int, int> genericClass = new();
     }
 
     #region Ref Return & Ref Local
@@ -147,6 +147,48 @@
 
     #endregion
 
+    #region Generic Yapılar
 
+        // Interface, Record, Struct birer generic yapılar olabilirler.
+        // Tür bildirimi mecburidir.
+        class GenericClass<T, T1, T2, T3> : GenericClass3<T>
+        {
+            T field;
+            public T1 MyProperty { get; set; }
+            public void Y<T2>()
+            {
+                
+            }
+            public void X<T2>(T3 par)
+            {
+                return par;
+            }
+        }
+
+        // Generic bir sınıf başka bir generic veya normal classtan miras alabilirde verebilirde.
+        // Bir Metot Generic veya generic olmayan yapılar kurulabilir.
+        class NormalClass : GenericClass<int, int, int, int>
+        {
+            public void X<T>()
+            {
+                
+            }
+        }
+
+        class GenericClass2<T> : GenericClass3<T>
+        {
+            
+        }
+
+        class GenericClass3<T> where T : class
+        {
+            
+        }
+
+        // Kısıtlamalar --> Tür güvenliği, 
+        // class Myclass<T> where T : <constraint> { }
+        // constraint --> struct, class, new(), Base Class, Interface, Enum, notnull, default
+
+    #endregion
 
 }
