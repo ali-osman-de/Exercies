@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        GenericClass<bool, string, int, int> genericClass = new();
+
     }
 
     #region Ref Return & Ref Local
@@ -201,6 +201,9 @@ class Program
     #endregion
 
     #region Generic Yapılar
+        /*
+            GenericClass<bool, string, int, int> genericClass = new();
+        */
 
         // Interface, Record, Struct birer generic yapılar olabilirler.
         // Tür bildirimi mecburidir.
@@ -242,5 +245,23 @@ class Program
         // class Myclass<T> where T : <constraint> { }
         // constraint --> struct, class, new(), Base Class, Interface, Enum, notnull, default
 
+    #endregion
+
+    #region Covariance & Contravariance
+
+        // Covariance --> İki değişken arasındaki ilişki biri artarken diğeri de artar.
+        // Override metotlarda geçerlidir.
+        IEnumerable<A> strings = new List<A>();
+        IEnumerable<B> objects = strings; // Covariance sayesinde IEnumerable<string> türündeki bir nesne, IEnumerable<object> türündeki bir nesneye atanabilir. Çünkü string türü object türünden türemiştir.
+
+        // Contravariance --> İki değişken arasındaki ilişki biri artarken diğeri azalır.
+        void XMethod(A a) { }
+        Action<A> aDelegate = XMethod;
+        Action<B> bDelegate = XMethod; // Contravariance sayesinde Action<A> türündeki bir nesne, Action<B> türündeki bir nesneye atanabilir. Çünkü A türü B türünden türemiştir.
+
+    #endregion
+
+    #region Delegates
+        
     #endregion
 }
