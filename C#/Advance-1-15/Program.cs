@@ -1,4 +1,6 @@
-﻿class Program
+﻿using System.Dynamic;
+
+class Program
 {
     static void Main(string[] args)
     {
@@ -147,6 +149,56 @@
 
     #endregion
 
+    #region Programatik Nesne Üretimi
 
+        #region Activator
+            // dinamik olan bilmediğimiz türlerde nesne üretmek için önce nesnenin türünü ardından o türden bir nesne üretmek için Activator sınıfını kullanırız.
+
+            /*
+                Type type = typeof(ActivatorClass);
+                ActivatorClass myClass = (ActivatorClass)Activator.CreateInstance(type);
+                Console.WriteLine($"{myClass.GetType().Name} nesnesi oluşturuldu.");
+            */
+            class ActivatorClass
+            {
+                
+            }
+        #endregion
+
+        #region Dynamic Object
+            // türünü belirmediğimiz nesneler oluşturmak için kullanılır. Dynamic türünde bir nesne oluşturduğumuzda, o nesnenin türü çalışma zamanında belirlenir ve o türün özelliklerine ve yöntemlerine erişebiliriz.
+
+            /*
+                dynamic generalClass = new GeneralClass();
+                generalClass.DynamicProperty = "Hello, World!";
+            */
+            class GeneralClass : DynamicObject
+            {
+
+                private readonly Dictionary<string, object> _properties = new();
+                public override bool TrySetMember(SetMemberBinder binder, object? value)
+                {
+                    _properties.Add(binder.Name, value!);
+                    return true;
+                }
+
+                public override bool TryGetMember(GetMemberBinder binder, out object? result)
+                {
+                    return _properties.TryGetValue(binder.Name, out result);
+                }
+                
+            }
+        #endregion
+
+        #region Expando Object
+            // Bir tür varmış gibi işlemler yapmamız sağlar.
+            /*
+                dynamic expando = new ExpandoObject();
+                expando.MyProperty = "Hello, World!";
+                Console.WriteLine(expando.MyProperty); // Hello, World!
+            */
+        #endregion
+
+    #endregion
 
 }
