@@ -262,6 +262,15 @@ class Program
     #endregion
 
     #region Delegates
-        
+        // Methodların temsil edilmesidir.
+        // Kodlama sürecinde bir methodun temsilcisi olarak kullanılırlar. Delegeler, bir methodun imzasını tanımlar ve o methodu çağırmak için kullanılabilirler.
+
+        // Delegatelere bir sınıfın davranışını özelleştirebildikleri için ihtiyaç duyarız.
+        // Temsilci Örneği --> public delegate void MyHandler(string message, string model);
+        // Kullanım Örneği --> MyHandler handler = new MyHandler();
+        // Delegatelerde bir referans türlüdür. özünde bir classtır, System.Delegate sınıfından türemiştir.
+
+        // delegate çalıştır veya tetikleme --> handler.Invoke(); veya handler();
+
     #endregion
 }
