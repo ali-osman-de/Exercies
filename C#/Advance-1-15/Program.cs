@@ -273,4 +273,53 @@ class Program
         // delegate çalıştır veya tetikleme --> handler.Invoke(); veya handler();
 
     #endregion
+
+    #region Events
+        // Olaylara tepki vermek
+        // event sourcing --> olayları takip etmek
+        // iletişim içinde kalmak
+
+        // Bir event o eventi tetikleyebilecek bir metot veya metotları içeren bir delegate ile birlikte kullanılır. Eventler, bir olay meydana geldiğinde tetiklenir ve o olaya tepki vermek için delegate tarafından tanımlanan metotları çağırır.
+
+        /*
+            EventClass eventClass = new();
+            eventClass.MyEvent += () // --> event daha tetiklenmedi sadece bağlandı.
+            eventClass.TriggerEvent(); // Eventi tetikliyoruz.
+            eventClass.MyEvent -= () // --> event bağlantısını kesiyoruz.
+        */
+
+        //Event Tanımlama
+
+        class EventClass
+        {
+            public delegate void XHandler();
+            public event XHandler MyEvent; // Eventlerin türleri vardır ve kullandıkları delegate türünde olmalıdırlar.
+            public void TriggerEvent()
+            {
+                MyEvent();
+            } 
+        }
+
+        // Kritik
+        // Delegateler tanımlandıkları classlar içerisinden üretilen instancelar tarafından erişelememektedir.
+        // Classların direkt değişken adından değil türleri üzerinden erişilebilir.
+        // Eğerki bir sınıfın objesi üzerinden yani instance üzerinden erişmeye çalışırsak bunu eventler üzerinden sağlayabiliyoruz.
+
+        // Event Add & Remove
+        // XHandler XMyEvent;
+        // public event XHandler MyEvent
+        // {
+        //     add
+        //     {
+                    //XMyEvent += value; // event tetiklendiğinde MyEvent'e bağlanan metotları XMyEvent'e ekleriz.
+        //     }
+        //     remove
+        //     {
+                    //XMyEvent -= value; // event bağlantısı kesildiğinde MyEvent'e bağlanan metotları XMyEvent'ten çıkarırız.
+        //     }
+        // };
+
+        // Belirli bir dizin 5mb geçtiği anda bir event oluşturalım.
+
+    #endregion
 }
