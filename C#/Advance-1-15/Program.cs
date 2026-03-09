@@ -1,4 +1,5 @@
-﻿using System.Dynamic;
+﻿using System.Collections.ObjectModel;
+using System.Dynamic;
 
 class Program
 {
@@ -353,7 +354,32 @@ class Program
 
     #endregion
 
+    #region Anonymous Structures İsimsiz Yapılar
+        // var keyword ile karşılanırlar.
+        // Anonymouse Objects --> derleme sırasında adlandırılmayan ve tanımlanmayan, anlık ve tek kullanımlık veri yapısında oluşturmada kullanışlı.
+            // readonly olarak tasarlanırlar.
+            var anonymouseObjectPerson = new
+            {
+                Name = "ali",
+                Age = 24
+            };
 
+        // Anonymouse Methods --> bir metodu ihtiyaç anında direkt tanımlayıp kullanılmasıdır.
+
+            //lambda ifadesi ile birlikte ve delegate keyword anonymous methodlardır
+            delegate int Topla(int num1, int num2);
+            Topla topla = new Topla((sayi1, sayi2) => sayi1 + sayi2);
+
+        // Anonymouse Collections --> adı ve türü belirtilmeyen bir koleksiyondur.
+            //array
+            var x = new[] {1,2,3,4};
+            //list
+            var y = new Collection()
+            {
+                new {A = 1},
+                new {B = 2}
+            }
+    #endregion
 
 
 
