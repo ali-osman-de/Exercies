@@ -406,4 +406,19 @@ class Program
     
     #endregion
 
+    #region Access Modifiers
+        
+        // Felsefesi: her yapının her zaman erişilebilir olmasını istemeyiz.
+        public // her yerden erişilebilir
+        private // sadece ilgili class içerisinde erişilebilir.
+        protected // sadece ilgili class içerisinde erişim sağlanır, Türe ait instancelarda private davranışı sergiler, fakat kalıtım alıyorsa yine class modeli içersinden erişim sağlanır burada önemli nokta yine instance üzerinden erişim sağlanamaz.
+        internal // aynı assembly içerisinden diğer sınıfların erişilebileceğini belirtir. classlar default olarak internal'dır.
+        protected internal // tanımlandığı proje içerisinde instance erişimi ve farklı bir assembly tarafından da erişim sağlanır. her biri birbirini ezme durumu var.
+        private protected // aynı assembly içerisinde erişim serbest fakat farklı bir assemblyde çalışmaz.
+
+        // Access Modifiers - Kapsülleme Handikapı
+        // bazı durumlarda mantıksal bozukluklar olabilir.
+
+    #endregion
+
 }
