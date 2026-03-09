@@ -322,4 +322,39 @@ class Program
         // Belirli bir dizin 5mb geçtiği anda bir event oluşturalım.
 
     #endregion
+
+    #region Hazır delegateler
+
+        // Action --> Geriye dönüş değeri olmayan delegatelerdir. parametre almayan ve geri dönüş değeri olmayan
+
+        Action action = () => Console.WriteLine("Hello, World!"); // Action delegate'ini kullanarak bir lambda ifadesi oluşturduk. Bu ifade, "Hello, World!" mesajını konsola yazdırır.
+        action(); // Action delegate'ini çağırarak lambda ifadesini çalıştırırız
+
+        // Action<T> --> Generic parametre alan ve geri dönüş değeri olmayan delegatelerdir.
+
+        Action<string> action2 = (message) => Console.WriteLine(message); // Action<T> delegate'ini kullanarak bir lambda ifadesi oluşturduk. Bu ifade, kendisine verilen mesajı konsola yazdırır.
+        action2("Hello, World!"); // Action<T> delegate'ini çağırarak
+
+        Action<string, int> action3 = (message, number) => Console.WriteLine($"{message} - {number}"); // Action<T1, T2> delegate'ini kullanarak bir lambda ifadesi oluşturduk. Bu ifade, kendisine verilen mesajı ve sayıyı konsola yazdırır.
+        action3("Hello, World!", 42); // Action<T1, T2>
+
+        // Func --> generic olarak hem parametre alan hem de geri dönüş değeri olan delegatelerdir.
+        // en çok kullanılan
+        
+        // Func<T1, T2, T3, T4, Tn> Burada en sondaki Tn bizim dönüş türümüzken diğerleri ise bizim generic parametrelerimiz 
+        // Func<string, int, bool>  func = (string, int) => true  örnek olarak bu şekilde diyebiliriz.
+        Func<int> func1 = () => 3; // bu şekilde olursa yani tek bir tane olursa, burada dönüş değerine denk gelir.
+
+        Func<string, int, bool> func = ("Ali", 12) => true;
+
+        // Predicate --> Generic bir parametre alan ve geriye bool değer döndüren delegatelerdir.
+
+        Predicate<int> predicate = num => num < 10; // sonuç bool olacaktır.
+
+    #endregion
+
+
+
+
+
 }
