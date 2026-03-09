@@ -1,5 +1,5 @@
-﻿using System.Collections.ObjectModel;
-using System.Dynamic;
+﻿using System.Dynamic;
+using System.Text.Json;
 
 class Program
 {
@@ -381,6 +381,29 @@ class Program
             }
     #endregion
 
+    #region ExpandoObject
 
+        // Run-time zamanında dinamik objeler oluşturmamızı sağlar
+        // client tarafından gelecek isteğe göre bir objeyi tasarlamak istediğimizde kullanabiliiz.
+        // özünde IDictionary<string, object> yapısındadır.
+
+        dynamic expandoObject = new ExpandoObject();
+
+        expandoObject.Name = "Ali";
+        expandoObject.MiddleName = "Osman";
+        expandoObject.Age = 24;
+
+        List<ExpandoObject> list = new()
+        {
+            expandoObject
+        }
+
+        // Serialize 
+            var jsonData = JsonSerializer.Serialize(list);
+
+        // Deserialize
+            dynamic data = JsonSerializer.Deserialize<List<ExpandoObject>>(jsonData);
+    
+    #endregion
 
 }
